@@ -1,4 +1,4 @@
-# Calf
+# lv2vst
 
 Modified for headless plugin build for [Elk Audio OS](https://elk.audio)
 

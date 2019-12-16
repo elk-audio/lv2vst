@@ -12,7 +12,7 @@ VSTNAME=lv2vst
 ###############################################################################
 
 ifeq ($(DEBUG),)
-  ifeq ($(ARCH),arm64)
+  ifeq ($(ARCH),arm)
 	  override CXXFLAGS += -ffast-math -fomit-frame-pointer -O3 -fno-finite-math-only -DNDEBUG
   else
     override CXXFLAGS += -msse -msse2 -ffast-math -fomit-frame-pointer -O3 -fno-finite-math-only -DNDEBUG
@@ -38,7 +38,7 @@ ifeq ($(UNAME),Darwin)
 else
   STRIPFLAGS=-s
   VSTLDFLAGS=-Wl,-Bstatic -Wl,-Bdynamic -Wl,--as-needed -shared
-  ifeq ($(ARCH),arm64)
+  ifeq ($(ARCH),arm)
     override CXXFLAGS  += -fvisibility=hidden -fdata-sections -ffunction-sections 
   else
     override CXXFLAGS  += -fvisibility=hidden -fdata-sections -ffunction-sections -mfpmath=sse
